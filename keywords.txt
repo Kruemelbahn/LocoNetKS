@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map For Buttons
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LocoNetClassKS	KEYWORD1
+LocoNetKS	KEYWORD1
+LN_STATUS	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+send	KEYWORD2
+sendSwitchState	KEYWORD2

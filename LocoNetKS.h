@@ -38,8 +38,10 @@ class LocoNetClassKS {
 	public:
 		LocoNetClassKS() {};
 
+		// send a loconetmessage with one-byte-length
 		LN_STATUS send(uint8_t OpCode);
 
+		// send switch data with the given OPCODE (B0, B1, B2)
 		LN_STATUS sendSwitchState(uint16_t ui16_swAdr, boolean b_swOn, boolean b_swDirection, uint8_t ui8_OPC);
 
 protected:

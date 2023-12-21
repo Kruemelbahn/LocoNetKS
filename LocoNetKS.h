@@ -1,12 +1,12 @@
 /*
 ||
 || @file LocoNetKS.h
-|| @version 1.0
+|| @version 1.1
 || @author Michael Zimmermann
 || @contact michael.zimmermann.sg@t-online.de
 ||
 || @description
-|| | additional functions for 'LocoNetClass' and 'LocoNetFastClockClass' from Loconet-Library, published by MRRwA (previously EmbeddedLocoNet)
+|| | additional functions for 'LocoNetClass' from Loconet-Library, published by MRRwA (previously EmbeddedLocoNet)
 || #
 ||
 || @license
@@ -52,27 +52,5 @@ protected:
 };
 
 extern LocoNetClassKS LocoNetKS;
-
-class LocoNetFastClockClassKS
-{
-private:
-	FC_STATE			fcState;			// State of the Fast Clock Slave 
-	uint8_t				fcFlags;			// Storage of the option flags passed into initFastClock()
-	fastClockMsg 	fcSlotData;		// Primary storage for the Fast Clock slot data 
-	uint8_t 			fcLastPeriod;	// Period of last tick so we can alternate between
-	uint8_t       fcLastfrac_minsh; // new
-
-	void doNotify(uint8_t Sync);
-
-public:
-	void init(uint8_t DCS100CompatibleSpeed, uint8_t CorrectDCS100Clock, uint8_t NotifyFracMin);
-	void initJMRI(uint8_t IsJMRI);															// new
-	void poll(void);
-	void processMessage(lnMsg* LnPacket);												// modified
-	void process66msActions(void);															// modified
-
-	FC_STATE getFastClockState() { return fcState; }						// new, used in debug-cases
-	fastClockMsg getFastClockSlotData() { return fcSlotData; }	// new, used in debug-cases
-};
 
 #endif
